@@ -86,7 +86,7 @@ def huggingface_local_completions(
     torch.backends.cuda.matmul.allow_tf32 = torch.backends.cudnn.allow_tf32 = True
 
     tokenizer = AutoTokenizer.from_pretrained(
-        model_name, cache_dir=cache_dir, padding_side="left", use_fast=is_fast_tokenizer, **model_kwargs
+        model_name, cache_dir=cache_dir, padding_side="left", use_fast=is_fast_tokenizer,unk_token="<unk>",bos_token="<s>",eos_token="</s>", **model_kwargs
     )
     model = AutoModelForCausalLM.from_pretrained(model_name, cache_dir=cache_dir, **model_kwargs).eval()
     
