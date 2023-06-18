@@ -5,6 +5,7 @@ robin-v2-7b:
     model_name: "LMFlow/Full-Robin-7b-v2"
     model_kwargs:
       torch_dtype: 'bfloat16'
+    batch_size: 8
     max_new_tokens: 1800
     temperature: 0.7
     top_p: 1.0
